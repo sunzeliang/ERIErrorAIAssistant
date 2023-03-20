@@ -1,6 +1,7 @@
 using System;
 using System.Reflection;
 
+#if CHATGPT_ERRORAIASSISTANT
 public class LogEditor
 {
     private static LogEditor m_Instance;
@@ -37,5 +38,5 @@ public class LogEditor
         ChatGPTMgr.Ins.Send(string.Format($"{activeText}这个是什么错误?"));
         return true;
     }
-
+#endif
 }

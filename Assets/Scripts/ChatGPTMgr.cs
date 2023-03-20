@@ -28,7 +28,7 @@ using System.Threading;
     }
 }
 
-
+#if CHATGPT_ERRORAIASSISTANT
 public class ChatGPTMgr
 {
     private static ChatGPTMgr _ins;
@@ -131,3 +131,4 @@ public class ChatGPTMgr
         }
     }
 }
+#endif
