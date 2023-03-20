@@ -10,6 +10,7 @@
 ### 使用
 + 将脚本放入Unity项目中
 + key.txt中填写OpenAI的key
++ 添加`CHATGPT_ERRORAIASSISTANT`宏
 - - -
 ### 功能
 <details>
