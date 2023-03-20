@@ -8,9 +8,9 @@
 + Unity2019-2020 [Unity官方地址](https://unity.com/)
 + Visual Studio 
 ### 使用
-+ 将`ChatGPTMgr.cs``LogEditor.cs`放入Unity项目中
++ 将 `ChatGPTMgr.cs` 和 `LogEditor.cs` 放入Unity项目中
 + key.txt中填写OpenAI的key
-+ 添加`CHATGPT_ERRORAIASSISTANT`宏
++ 添加 `CHATGPT_ERRORAIASSISTANT` 宏
 - - -
 ### 功能
 <details>
