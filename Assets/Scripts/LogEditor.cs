@@ -38,5 +38,5 @@ public class LogEditor
         ChatGPTMgr.Ins.Send(string.Format($"{activeText}这个是什么错误?"));
         return true;
     }
-#endif
 }
+#endif
