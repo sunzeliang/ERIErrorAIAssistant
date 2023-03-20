@@ -38,8 +38,8 @@ public class ChatGPTMgr
         {
             if(_ins == null)
             {
-                Initialize();
                 _ins = new ChatGPTMgr();
+                Initialize();
             }
             return _ins;
         }
@@ -58,7 +58,8 @@ public class ChatGPTMgr
 
     private static void Initialize()
     {
-        if(File.Exists(Path.Combine(UnityEngine.Application.dataPath, "Resources/key.txt")))
+        var keyPath = Path.Combine(UnityEngine.Application.dataPath, "Resources/key.txt");
+        if (File.Exists(keyPath))
         {
             chatGPTKey = UnityEngine.Resources.Load<UnityEngine.TextAsset>("key").text;
         }
@@ -104,7 +105,7 @@ public class ChatGPTMgr
             var bytes = Encoding.UTF8.GetBytes(Newtonsoft.Json.JsonConvert.SerializeObject(chatGPTPostData));
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(chatGPTUri);
             request.Method = "POST";
-            request.ContentType = "application/json";
+            request.ContentType = "application/json; encoding='utf-8'";
             request.ContentLength = bytes.Length;
             request.Headers.Add("Authorization", string.Format("Bearer {0}", chatGPTKey));
             using (var stream = request.GetRequestStream())

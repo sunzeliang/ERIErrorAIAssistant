@@ -16,6 +16,7 @@ public class LogEditor
     private Type m_ConsoleWindowType = null;
     private FieldInfo m_ActiveTextInfo;
     private FieldInfo m_ConsoleWindowFileInfo;
+    private FieldInfo m_ActiveModeInfo;
 
     private LogEditor()
     {
@@ -35,7 +36,10 @@ public class LogEditor
     {
         var windowInstance = m_ConsoleWindowFileInfo.GetValue(null);
         var activeText = m_ActiveTextInfo.GetValue(windowInstance).ToString();
-        ChatGPTMgr.Ins.Send(string.Format($"{activeText}这个是什么错误?"));
+        if (!string.IsNullOrEmpty(activeText))
+        {
+            ChatGPTMgr.Ins.Send(string.Format($"{activeText}这个是什么错误?"));
+        }
         return true;
     }
 }
